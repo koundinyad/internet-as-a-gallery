@@ -1,0 +1,10 @@
+{
+  "manifest_version": 1,
+  "name": "internet-as-a-gallery",
+  "version": "0.1",
+  "description": "How does a web page look like as a gallery? ",
+  "permissions": ["menus", "<all_urls>"],
+  "background": {
+    "scripts": ["background.js"]
+  }
+}

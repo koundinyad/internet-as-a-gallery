@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+
+body {
+	/* background-image: url('/clouds.gif'); */
+	background: rgb(123, 255, 94);
+	background: linear-gradient(0deg, rgba(98, 255, 13, 1) 0%, rgb(243, 255, 190) 100%);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	height: 100dvh;
+	background-attachment: fixed;
+	font-family: 'Instrument Serif', serif;
+}
+/* h1,
+h2,
+h3,
+h4 {
+	text-shadow: 3px 0 1px rgba(0, 30, 255, 0.5), -3px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+} */
+
+h1 {
+	font-size: 4rem;
+}
+
+h2 {
+	font-size: 3rem;
+}
+
+h3 {
+	font-size: 2rem;
+}
+
+p {
+	font-size: 1.5rem;
+}
+
+.img-gallery {
+	border: 6px solid white;
+	box-shadow: rgb(238, 41, 207) 10px 10px 100px 20px;
+	width: 200px;
+	opacity: 0;
+	animation-iteration-count: 1;
+	animation-name: fadeInOpacity;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+.gallery-caption {
+	text-align: center;
+	z-index: 100;
+	cursor: pointer;
+	transition: opacity 0.2s ease-in-out;
+	font-size: 1.5em;
+}
+
+.gallery {
+	height: 80vh;
+	margin: 5em;
+	background-image: url('/clouds.gif');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-transition: background 1.5s linear;
+	-moz-transition: background 1.5s linear;
+	-o-transition: background 1.5s linear;
+	-ms-transition: background 1.5s linear;
+	transition: background 1.5s linear;
+}
+.splash {
+	cursor: pointer;
+}
+.form {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 100vw;
+}
+
+@media (max-width: 768px) {
+	.img-gallery {
+		width: 100px;
+	}
+	p {
+		font-size: 1rem;
+	}
+	.gallery-caption {
+		font-size: 1rem;
+	}
+	.gallery {
+		height: 80vh;
+		margin: 1em;
+	}
+}
+
+@keyframes float {
+	0% {
+		transform: translateY(-10px);
+	}
+	50% {
+		transform: translateY(10px);
+	}
+	100% {
+		transform: translateY(-10px);
+	}
+}
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

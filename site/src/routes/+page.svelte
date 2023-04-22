@@ -45,15 +45,6 @@
 	</section>
 
 	<About />
-	<!-- <Video /> -->
-	<div class="form">
-		<!-- Create select box -->
-		<select name="channel" id="channel" on:change={handleChange} bind:value={choice}>
-			<option value="gazing-elsewhere">Gazing Elsewhere</option>
-			<option value="garden-garden-garden">Gazing Elsewhere 2</option>
-			<option value="a-library-of-gestures">Gazing Elsewhere 3</option>
-			<option value="hands-hold-the-world">Gazing Elsewhere 4</option>
-		</select>
-	</div>
+
 	<Footer />
 {/if}

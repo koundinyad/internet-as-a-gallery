@@ -23,7 +23,7 @@
 
 	let proceed = false;
 
-	let imageURLs = ['/01.gif', '/02.gif', '/03.gif'];
+	let imageURLs = ['/02.gif', '/03.gif'];
 	let imgUrl = imageURLs[0];
 
 	setInterval(() => {

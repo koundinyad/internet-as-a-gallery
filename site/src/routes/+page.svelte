@@ -12,7 +12,6 @@
 	export let data;
 
 	// let key = 'gazing-elsewhere';
-	let choice;
 
 	// let url = `https://api.are.na/v2/channels/${choice}?per=10`;
 	// const options = {
@@ -24,7 +23,12 @@
 
 	let proceed = false;
 
-	async function handleChange(e) {}
+	let imageURLs = ['/01.gif', '/02.gif', '/03.gif'];
+	let imgUrl = imageURLs[0];
+
+	setInterval(() => {
+		imgUrl = imageURLs[Math.floor(Math.random() * imageURLs.length)];
+	}, 1000);
 </script>
 
 <svelte:head>
@@ -40,9 +44,8 @@
 		<Splash content="svg" on:click={() => (proceed = true)} />
 	</section>
 {:else}
-	<section class="gallery" in:fade={{ duration: 4500 }}>
-		<Gallery contents={data.contents.contents} />
-	</section>
+	<Gallery contents={data.contents.contents} />
+	<section class="gallery" in:fade={{ duration: 4500 }} style="background-image: url({imgUrl});" />
 
 	<About />
 

@@ -173,9 +173,11 @@
 				p.style.opacity = '0';
 			});
 
+			const duration = Math.max(Math.floor(Math.random() * 10), 3);
+
 			//   Event styles
 			imgContainer.style.zIndex = zCount;
-			imgContainer.style.animation = `float 5s infinite`;
+			imgContainer.style.animation = `float ${duration}s infinite ease-in-out`;
 
 			//   Animation
 		});

@@ -1,7 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+/* Fonts */
+
+@font-face {
+	font-family: 'Instrument Serif';
+	src: url('/fonts/InstrumentSerif-Italic.woff2') format('woff2'),
+		url('/fonts/InstrumentSerif-Italic.woff') format('woff');
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Instrument Serif';
+	src: url('/fonts/InstrumentSerif-Regular.woff2') format('woff2'),
+		url('/fonts/InstrumentSerif-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
 
 body {
-	background-image: url('/clouds.gif');
 	background: rgb(123, 255, 94);
 	background: linear-gradient(0deg, rgb(195, 255, 13) 0%, rgb(63, 234, 240) 100%);
 	background-size: cover;
@@ -12,12 +29,6 @@ body {
 	background-attachment: fixed;
 	font-family: 'Instrument Serif', serif;
 }
-/* h1,
-h2,
-h3,
-h4 {
-	text-shadow: 3px 0 1px rgba(0, 30, 255, 0.5), -3px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
-} */
 
 h1 {
 	font-size: 4rem;
@@ -60,6 +71,7 @@ p {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	background-image: url('/cloud.gif');
 	-webkit-transition: background 1.5s linear;
 	-moz-transition: background 1.5s linear;
 	-o-transition: background 1.5s linear;

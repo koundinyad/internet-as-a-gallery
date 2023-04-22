@@ -38,11 +38,10 @@
 	}
 	section p {
 		font-size: 3em;
-		font-style: italic;
 	}
 	section sup {
 		font-size: 0.4em;
-		font-style: normal;
+		font-style: italic;
 		font-weight: 100;
 		margin-left: 0.5em;
 		margin-bottom: 1em;

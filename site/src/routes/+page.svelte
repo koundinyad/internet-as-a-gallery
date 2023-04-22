@@ -29,8 +29,9 @@
 		<Splash content="svg" on:click={() => (proceed = true)} />
 	</section>
 {:else}
-	<Gallery contents={data.contents.contents} />
-	<section class="gallery" in:fade={{ duration: 4500 }} />
+	<section class="gallery" in:fade={{ duration: 4500 }}>
+		<Gallery contents={data.contents.contents} />
+	</section>
 
 	<About />
 

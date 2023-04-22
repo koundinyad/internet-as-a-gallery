@@ -33,6 +33,8 @@
 	section h1 > sup {
 		font-size: 0.5em;
 		font-style: italic;
+		margin-left: 0.5em;
+		margin-bottom: 1em;
 	}
 	@media (max-width: 768px) {
 		section {

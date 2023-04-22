@@ -3,7 +3,7 @@
 body {
 	/* background-image: url('/clouds.gif'); */
 	background: rgb(123, 255, 94);
-	background: linear-gradient(0deg, rgba(98, 255, 13, 1) 0%, rgb(243, 255, 190) 100%);
+	background: linear-gradient(0deg, rgb(195, 255, 13) 0%, rgb(63, 234, 240) 100%);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;

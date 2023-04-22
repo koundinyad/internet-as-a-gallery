@@ -11,24 +11,9 @@
 
 	export let data;
 
-	// let key = 'gazing-elsewhere';
-
-	// let url = `https://api.are.na/v2/channels/${choice}?per=10`;
-	// const options = {
-	// 	fetcher: (url) => fetch(url).then((r) => r.json())
-	// };
-	// const { data, error, refresh, update } = swr(url, options); // or "swr(key, options.fetcher)"
-
 	// import Video from '../components/Video.svelte';
 
 	let proceed = false;
-
-	let imageURLs = ['/02.gif', '/03.gif'];
-	let imgUrl = imageURLs[0];
-
-	setInterval(() => {
-		imgUrl = imageURLs[Math.floor(Math.random() * imageURLs.length)];
-	}, 1000);
 </script>
 
 <svelte:head>
@@ -45,7 +30,7 @@
 	</section>
 {:else}
 	<Gallery contents={data.contents.contents} />
-	<section class="gallery" in:fade={{ duration: 4500 }} style="background-image: url({imgUrl});" />
+	<section class="gallery" in:fade={{ duration: 4500 }} />
 
 	<About />
 

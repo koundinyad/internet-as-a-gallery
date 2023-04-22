@@ -58,8 +58,8 @@
 		);
 		// let h = window.innerHeight - 100;
 
-		h = h - 500;
-		let w = window.innerWidth - 100;
+		h = h - 200;
+		let w = window.innerWidth - 50;
 
 		const data = [];
 		if (contents) {
@@ -125,16 +125,6 @@
 				);
 			});
 
-			p.addEventListener('click', () => {
-				newwindow = window.open(
-					imgBox.src,
-					imgBox.alt,
-					`height=${Math.max(imgBox.height * 1.5 || 600)},width=${Math.max(
-						imgBox.width * 1.5 || 600
-					)},toolbar=no,menubar=no,location=no,resizable=no,status=no`
-				);
-			});
-
 			//
 
 			//   Drag context
@@ -160,16 +150,28 @@
 				imgContainer.style.zIndex = zCount++;
 			});
 
+			imgContainer.addEventListener('touchstart', () => {
+				imgContainer.style.zIndex = zCount++;
+			});
+
 			//   Add caption on mouseenter
 			imgContainer.addEventListener('mousedown', () => {
 				p.style.opacity = '1';
+				imgContainer.style.transform = 'scale(1.2)';
+			});
 
+			imgContainer.addEventListener('touchstart', () => {
+				p.style.opacity = '1';
 				imgContainer.style.transform = 'scale(1.2)';
 			});
 
 			//   Remove caption on mouseleave
 
 			imgContainer.addEventListener('mouseup', () => {
+				p.style.opacity = '0';
+			});
+
+			imgContainer.addEventListener('touchend', () => {
 				p.style.opacity = '0';
 			});
 

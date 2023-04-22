@@ -1,15 +1,30 @@
 export async function load({ params, fetch }) {
-	const url = 'https://api.are.na/v2/channels/gazing-elsewhere?per=10';
+	const slugs = [
+		'0-0-2',
+		'inspiration-pkg3x0zmngw',
+		'body-ody-ody',
+		'a-library-of-gestures',
+		'gazing-elsewhere',
+		'human-body-gestures',
+		'posters-aoxsu7b9gho',
+		'god-i-m-sorry-i-m-dizzy-after-all-the-sex-i-had'
+	];
+
+	const random = Math.floor(Math.random() * slugs.length);
+
+	const channel = slugs[random];
+
+	const url = `https://api.are.na/v2/channels/${channel}?per=18`;
 	const getData = async (url) => {
 		const response = await fetch(url);
 		const data = await response.json();
 
-		return data;
+		return data.contents;
 	};
 
 	const data = getData(url);
 
 	return {
-		contents: data
+		data
 	};
 }

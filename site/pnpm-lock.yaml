@@ -2,7 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@neodrag/svelte': ^2.0.3
-  '@svelte-drama/swr': ^0.2.8
   '@sveltejs/adapter-auto': ^2.0.0
   '@sveltejs/kit': ^1.5.0
   eslint: ^8.28.0
@@ -10,14 +9,11 @@ specifiers:
   eslint-plugin-svelte3: ^4.0.0
   prettier: ^2.8.0
   prettier-plugin-svelte: ^2.8.1
-  sswr: ^1.10.0
   svelte: ^3.54.0
   vite: ^4.2.0
 
 dependencies:
   '@neodrag/svelte': 2.0.3
-  '@svelte-drama/swr': 0.2.8_svelte@3.58.0
-  sswr: 1.10.0_svelte@3.58.0
 
 devDependencies:
   '@sveltejs/adapter-auto': 2.0.0_@sveltejs+kit@1.15.5
@@ -319,15 +315,6 @@ packages:
   /@polka/url/1.0.0-next.21:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
-
-  /@svelte-drama/swr/0.2.8_svelte@3.58.0:
-    resolution: {integrity: sha512-mrDzCFkA628H1cWaeqnQKK/381xW+QJBGinkHrsvJzcg2iVR/4IHvEYOLyU48vLqFnyFg6XhG2baCNJE4IloVg==}
-    peerDependencies:
-      '@svelte-drama/suspense': ^0.3.5
-      svelte: ^3.44.3
-    dependencies:
-      svelte: 3.58.0
-    dev: false
 
   /@sveltejs/adapter-auto/2.0.0_@sveltejs+kit@1.15.5:
     resolution: {integrity: sha512-b+gkHFZgD771kgV3aO4avHFd7y1zhmMYy9i6xOK7m/rwmwaRO8gnF5zBc0Rgca80B2PMU1bKNxyBTHA14OzUAQ==}
@@ -1107,15 +1094,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /sswr/1.10.0_svelte@3.58.0:
-    resolution: {integrity: sha512-nLWAJSQy3h8t7rrbTXanRyVHuQPj4PwKIVGe4IMlxJFdhyaxnN/JGACnvQKGDeWiTGYIZIx/jRuUsPEF0867Pg==}
-    peerDependencies:
-      svelte: ^3.29.0
-    dependencies:
-      svelte: 3.58.0
-      swrev: 3.0.0
-    dev: false
-
   /streamsearch/1.1.0:
     resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==}
     engines: {node: '>=10.0.0'}
@@ -1157,10 +1135,7 @@ packages:
   /svelte/3.58.0:
     resolution: {integrity: sha512-brIBNNB76mXFmU/Kerm4wFnkskBbluBDCjx/8TcpYRb298Yh2dztS2kQ6bhtjMcvUhd5ynClfwpz5h2gnzdQ1A==}
     engines: {node: '>= 8'}
-
-  /swrev/3.0.0:
-    resolution: {integrity: sha512-QJuZiptdOmbDY45pECBRVEgnoBlOKjeT2MWVz04wKHpWX15hM3P7EjcIbHDg5yLoPCMQ7to3349MEE+l9QF5HA==}
-    dev: false
+    dev: true
 
   /text-table/0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}

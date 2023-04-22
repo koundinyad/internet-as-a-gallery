@@ -1,6 +1,6 @@
 <section>
 	<div>
-		<h1>internet-as-a-gallery</h1>
+		<h1>internet-as-a-gallery<sup>.space</sup></h1>
 	</div>
 	<aside>
 		<p>
@@ -28,6 +28,10 @@
 	}
 	section h1 {
 		font-size: 3em;
+		font-weight: normal;
+	}
+	section h1 > sup {
+		font-size: 0.5em;
 		font-style: italic;
 	}
 	@media (max-width: 768px) {

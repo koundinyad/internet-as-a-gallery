@@ -1,8 +1,6 @@
 <script>
 	import '../globals.css';
 
-	import { swr, clear } from '@svelte-drama/swr';
-
 	import Gallery from '../components/Gallery.svelte';
 	import Splash from '../components/Splash.svelte';
 	import About from '../components/About.svelte';
@@ -10,6 +8,10 @@
 	import { fade } from 'svelte/transition';
 
 	export let data;
+
+	let contents = data.data;
+
+	let option;
 
 	// import Video from '../components/Video.svelte';
 
@@ -26,11 +28,11 @@
 
 {#if !proceed}
 	<section on:click={() => (proceed = true)} on:keypress={() => (proceed = true)} class="splash">
-		<Splash content="svg" on:click={() => (proceed = true)} />
+		<Splash on:click={() => (proceed = true)} />
 	</section>
 {:else}
 	<section class="gallery" in:fade={{ duration: 4500 }}>
-		<Gallery contents={data.contents.contents} />
+		<Gallery {contents} />
 	</section>
 
 	<About />

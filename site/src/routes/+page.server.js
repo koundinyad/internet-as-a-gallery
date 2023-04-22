@@ -7,7 +7,8 @@ export async function load({ params, fetch }) {
 		'gazing-elsewhere',
 		'human-body-gestures',
 		'posters-aoxsu7b9gho',
-		'god-i-m-sorry-i-m-dizzy-after-all-the-sex-i-had'
+		'god-i-m-sorry-i-m-dizzy-after-all-the-sex-i-had',
+		'1-bit-animations'
 	];
 
 	const random = Math.floor(Math.random() * slugs.length);

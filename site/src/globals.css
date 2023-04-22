@@ -18,9 +18,18 @@
 	font-display: swap;
 }
 
+a {
+	color: #290f62;
+	border-bottom: 1px dashed #290f62;
+	text-decoration: none;
+}
+
 body {
-	background: rgb(123, 255, 94);
-	background: linear-gradient(0deg, rgb(195, 255, 13) 0%, rgb(63, 234, 240) 100%);
+	color: #290f62;
+	background-image: url('/grainy1.jpg');
+	/* Backup */
+	/* background: rgb(123, 255, 94);
+	background: linear-gradient(0deg, rgb(195, 255, 13) 0%, rgb(63, 234, 240) 100%); */
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -48,7 +57,7 @@ p {
 
 .img-gallery {
 	border: 6px solid white;
-	box-shadow: rgb(238, 41, 207) 10px 10px 100px 20px;
+	box-shadow: #3411fd 10px 0px 100px 10px;
 	width: 200px;
 	opacity: 0;
 	animation-iteration-count: 1;

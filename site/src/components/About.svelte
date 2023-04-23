@@ -26,6 +26,7 @@
 	section {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
+		align-items: end;
 		height: 70%;
 		padding: 4em;
 		gap: 10em;

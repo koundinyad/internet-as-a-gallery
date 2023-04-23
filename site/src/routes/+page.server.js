@@ -2,7 +2,6 @@ export async function load({ params, fetch }) {
 	const slugs = [
 		'0-0-2',
 		'inspiration-pkg3x0zmngw',
-		'body-ody-ody',
 		'a-library-of-gestures',
 		'gazing-elsewhere',
 		'human-body-gestures',

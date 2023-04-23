@@ -64,10 +64,12 @@
 		const data = [];
 		if (contents) {
 			contents.forEach((item) => {
-				data.push({
-					url: item.image.square.url,
-					caption: item.generated_title ? item.generated_title : 'Unknown'
-				});
+				if (item.image && item.image.square) {
+					data.push({
+						url: item.image.display.url,
+						caption: item.generated_title ? item.generated_title : 'Unknown'
+					});
+				}
 			});
 		}
 

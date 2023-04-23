@@ -8,7 +8,7 @@
 
 			<br />
 			What does an alternate internet full of images look like and how do we navigate it? <br />
-			The project seeks to explore this and reimagine webpages as gallery spaces.
+			The project seeks to explore this idea and reimagine webpages as an immersive gallery of images
 			<br /><br />
 
 			internet-as-a-gallery is &nbsp

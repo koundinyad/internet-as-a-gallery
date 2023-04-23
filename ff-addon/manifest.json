@@ -2,7 +2,7 @@
   "description": "How do we imagine an alternate way to look at the web? How does the internet look like as a gallery? internet-as-a-gallery is an experimental browser addon to explore this idea.",
   "manifest_version": 2,
   "name": "internet-as-a-gallery",
-  "version": "1.0",
+  "version": "1.1",
   "homepage_url": "https://koundinya.work",
   "background": {
     "scripts": ["background.js"],

@@ -64,7 +64,7 @@
 		const data = [];
 		if (contents) {
 			contents.forEach((item) => {
-				if (item.image && item.image.square) {
+				if (item.image.display.url && item.image.square.url) {
 					data.push({
 						url: item.image.display.url,
 						caption: item.generated_title ? item.generated_title : 'Unknown'
@@ -90,6 +90,9 @@
 
 		const body = document.querySelector('body');
 
+		const container = document.createElement('div');
+		body.appendChild(container);
+
 		data.forEach((img, index) => {
 			// Create elements
 			const imgContainer = document.createElement('div');
@@ -107,7 +110,7 @@
 			imgContainer.style.width = '200px';
 
 			imgContainer.append(imgBox);
-			body.append(imgContainer);
+			container.append(imgContainer);
 
 			const p = document.createElement('p');
 			p.classList.add('gallery-caption');

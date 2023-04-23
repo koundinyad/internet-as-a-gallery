@@ -4,31 +4,36 @@
 	</div>
 	<aside>
 		<p>
-			internet-as-a-gallery is an exploration of reimagning alternate ways to browse the web. <br
-			/><br />
-			What does an internet full of images look like? How can we rethink the way we navigate the web?
-			<br />
-		</p>
+			internet-as-a-gallery is an exploration of alternate ways to browse the internet.
 
-		<a href="https://addons.mozilla.org/en-GB/firefox/addon/internet-as-a-gallery/" target="_blank"
-			>Download for Firefox</a
-		>
+			<br />
+			What does an alternate internet full of images look like and how do we navigate it? <br />
+			The project seeks to explore this and reimagine webpages as gallery spaces.
+			<br /><br />
+
+			internet-as-a-gallery is &nbsp
+			<a
+				href="https://addons.mozilla.org/en-GB/firefox/addon/internet-as-a-gallery/"
+				target="_blank"
+			>
+				available as a Firefox Add-on</a
+			>
+		</p>
 	</aside>
 </section>
 
 <style>
 	section {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 		height: 70%;
 		padding: 4em;
-		gap: 1em;
+		gap: 10em;
 	}
 	section h1 {
 		font-size: 3em;
 		font-weight: normal;
+		text-align: right;
 	}
 	section h1 > sup {
 		font-size: 0.5em;
@@ -38,11 +43,18 @@
 	}
 	@media (max-width: 768px) {
 		section {
+			display: flex;
 			flex-direction: column;
 			justify-content: center;
+			gap: 0;
+			padding: 1em;
 		}
 		section h1 {
 			font-size: 2em;
+			text-align: left;
+		}
+		section p {
+			font-size: 1.2em;
 		}
 	}
 </style>

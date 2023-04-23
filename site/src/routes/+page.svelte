@@ -27,9 +27,9 @@
 		<Splash on:click={() => (proceed = true)} />
 	</section>
 {:else}
-	<section class="gallery" in:fade={{ duration: 4500 }}>
+	<div class="gallery" in:fade={{ duration: 4500 }}>
 		<Gallery {contents} />
-	</section>
+	</div>
 
 	<About />
 

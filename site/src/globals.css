@@ -19,13 +19,14 @@
 }
 
 a {
-	border-bottom: 1px dashed #40f;
+	border-bottom: 1px dashed #2111fd;
 	text-decoration: none;
 }
 
 body {
-	color: #40f;
+	color: #2111fd;
 	background-image: url('/bg.webp');
+
 	/* Backup */
 	/* background: rgb(123, 255, 94);
 	background: linear-gradient(0deg, rgb(195, 255, 13) 0%, rgb(63, 234, 240) 100%); */
@@ -34,7 +35,6 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	height: 100dvh;
-	background-attachment: fixed;
 	font-family: 'Instrument Serif', serif;
 }
 
@@ -54,9 +54,13 @@ p {
 	font-size: 1.5rem;
 }
 
+ul li {
+	margin-top: 0.2em;
+}
+
 .img-gallery {
 	border: 6px solid white;
-	box-shadow: #3411fd 10px 0px 100px 10px;
+	box-shadow: #2111fd 10px 0px 100px 10px;
 	width: 200px;
 	opacity: 0;
 	animation-iteration-count: 1;
@@ -78,7 +82,7 @@ p {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-image: url('/cloud.gif');
+	background-image: url('/clouds.gif');
 	-webkit-transition: background 1.5s linear;
 	-moz-transition: background 1.5s linear;
 	-o-transition: background 1.5s linear;

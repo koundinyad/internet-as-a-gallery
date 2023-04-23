@@ -4,7 +4,6 @@ export async function load({ params, fetch }) {
 		'inspiration-pkg3x0zmngw',
 		'a-library-of-gestures',
 		'gazing-elsewhere',
-		'human-body-gestures',
 		'posters-aoxsu7b9gho',
 		'god-i-m-sorry-i-m-dizzy-after-all-the-sex-i-had',
 		'1-bit-animations'
@@ -14,7 +13,7 @@ export async function load({ params, fetch }) {
 
 	const channel = slugs[random];
 
-	const url = `https://api.are.na/v2/channels/${channel}?per=18`;
+	const url = `https://api.are.na/v2/channels/${channel}?per=15`;
 	const getData = async (url) => {
 		const response = await fetch(url);
 		const data = await response.json();

@@ -1,9 +1,9 @@
-browser.contextMenus.remove("run-gallery");
+// browser.contextMenus.remove("run-gallery");
 
 browser.contextMenus.create(
   {
     id: "run-gallery",
-    title: "How does this page look like as a gallery?",
+    title: "this-page-as-a-gallery",
     contexts: ["page", "image"],
     icons: {
       16: "icons/icon-16.png",

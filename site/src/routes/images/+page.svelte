@@ -28,8 +28,13 @@
 		<li>
 			<a
 				target="_blank"
-				href="https://www.are.na/francisca-cardoso-lima/god-i-m-sorry-i-m-dizzy-after-all-the-sex-i-had"
-				>god-i-m-sorry-i-m-dizzy-after-all-the-sex-i-had</a
+				href="https://www.are.na/lee-schulder/why-haven-t-we-seen-a-photograph-of-the-whole-earth-yet"
+				>why-haven-t-we-seen-a-photograph-of-the-whole-earth-yet</a
+			>
+		</li>
+		<li>
+			<a target="_blank" href="https://www.are.na/michael-guntetong/image-making-zg_r_-lwbig"
+				>image-making-zg_r_-lwbig</a
 			>
 		</li>
 		<li>

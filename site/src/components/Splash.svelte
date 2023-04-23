@@ -17,7 +17,7 @@
 				<path
 					in:draw={{ duration: 4500, easing: quintOut }}
 					d="M 10 1 L 600 1 "
-					stroke="black"
+					stroke="#40f"
 					stroke-width="3"
 				/>
 			</svg>

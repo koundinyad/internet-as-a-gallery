@@ -11,10 +11,6 @@
 
 	let contents = data.data;
 
-	let option;
-
-	// import Video from '../components/Video.svelte';
-
 	let proceed = false;
 </script>
 

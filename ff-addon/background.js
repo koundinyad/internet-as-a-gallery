@@ -4,10 +4,11 @@ browser.contextMenus.create(
   {
     id: "run-gallery",
     title: "this-page-as-a-gallery",
-    contexts: ["page", "image"],
+    contexts: ["page", "image", "link"],
     icons: {
       16: "icons/icon-16.png",
       32: "icons/icon-32.png",
+      48: "icons/icon-32.png",
       64: "icons/icon-64.png",
     },
   },

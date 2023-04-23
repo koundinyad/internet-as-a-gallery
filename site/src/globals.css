@@ -69,7 +69,6 @@ p {
 .gallery-caption {
 	text-align: center;
 	z-index: 100;
-	cursor: pointer;
 	transition: opacity 0.2s ease-in-out;
 	font-size: 1.5em;
 }

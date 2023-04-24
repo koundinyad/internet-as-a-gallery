@@ -17,7 +17,13 @@
 <svelte:head>
 	<title>internet-as-a-gallery</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta name="description" content="gazing elsewhere" />
+	<meta
+		name="description"
+		content="internet-as-a-gallery is an exploration of reimagning the web as a gallery. The project is available as a browser addon"
+	/>
+	<!-- Meta Image -->
+	<meta property="og:image" content="/thumb.jpg" />
+	<meta property="og:image:alt" content="internet-as-a-gallery" />
 	<meta name="author" content="koundinya dhulipalla" />
 	<link rel="icon" type="image/png" href="/favicon.png" />
 </svelte:head>

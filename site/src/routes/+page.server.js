@@ -5,8 +5,7 @@ export async function load({ params, fetch }) {
 		'a-library-of-gestures',
 		'gazing-elsewhere',
 		'posters-aoxsu7b9gho',
-		'why-haven-t-we-seen-a-photograph-of-the-whole-earth-yet',
-		'image-making-zg_r_-lwbig'
+		'why-haven-t-we-seen-a-photograph-of-the-whole-earth-yet'
 	];
 
 	const random = Math.floor(Math.random() * slugs.length);

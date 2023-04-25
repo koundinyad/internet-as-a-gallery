@@ -33,11 +33,6 @@
 			>
 		</li>
 		<li>
-			<a target="_blank" href="https://www.are.na/michael-guntetong/image-making-zg_r_-lwbig"
-				>image-making-zg_r_-lwbig</a
-			>
-		</li>
-		<li>
 			<a target="_blank" href="https://www.are.na/are-na-commons/1-bit-animations"
 				>1-bit-animations</a
 			>

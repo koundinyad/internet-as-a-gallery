@@ -8,7 +8,7 @@
 
 			<br />
 			What would an alternate internet filled with images look like, and how would we navigate it? Moreover,
-			how can we reinforce the critical role of <i>alt</i>-text on the internet?<br />
+			how can we reinforce the role of <i>alt</i>-text on the internet?<br />
 			The project seeks to explore this idea and reimagine webpages as an immersive gallery of images
 			<br /><br />
 

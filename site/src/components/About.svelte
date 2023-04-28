@@ -7,8 +7,8 @@
 			internet-as-a-gallery is an exploration of alternate ways to browse the internet.
 
 			<br />
-			What does an alternate internet full of images look like and how do we navigate it? And how do
-			we understand the role <i>alt</i>-text plays on the internet?<br />
+			What would an alternate internet filled with images look like, and how would we navigate it? Moreover,
+			how can we reinforce the critical role of <i>alt</i>-text on the internet?<br />
 			The project seeks to explore this idea and reimagine webpages as an immersive gallery of images
 			<br /><br />
 

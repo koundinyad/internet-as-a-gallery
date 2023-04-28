@@ -12,7 +12,7 @@
 			The project seeks to explore this idea and reimagine webpages as an immersive gallery of images
 			<br /><br />
 
-			internet-as-a-gallery is &nbsp
+			internet-as-a-gallery is&nbsp
 			<a
 				href="https://addons.mozilla.org/en-GB/firefox/addon/internet-as-a-gallery/"
 				target="_blank"

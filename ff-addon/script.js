@@ -67,7 +67,7 @@ images.forEach((image) => {
 
 document.head.innerText = "";
 
-document.querySelector("body").style.height = "250vh";
+document.querySelector("body").style.height = "200vh";
 document.querySelector(
   "body"
 ).style.backgroundImage = `url(${browser.runtime.getURL("/clouds.gif")})`;
@@ -155,7 +155,7 @@ let zCount = 0;
 const body = document.querySelector("body");
 
 if (data.length === 0) {
-  const notFoundText = "No images found on this page :(";
+  const notFoundText = "No images on this gallery";
   const p = document.createElement("p");
   p.innerText = notFoundText;
   p.style.fontSize = "2em";
@@ -186,7 +186,7 @@ if (data.length === 0) {
     body.append(imgContainer);
 
     const p = document.createElement("p");
-    p.innerText = img.caption;
+    p.innerText = img.caption ? img.caption : "Unknown artwork";
     p.style.textAlign = "center";
     imgContainer.append(p);
     p.style.opacity = "0";

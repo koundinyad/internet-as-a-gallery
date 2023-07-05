@@ -2,8 +2,8 @@
   "description": "internet-as-a-gallery is an exploration of alternate ways to browse the internet. What does an alternate internet full of images look like and how do we navigate it? The project seeks to explore this as a net-art and reimagine webpages as gallery spaces.",
   "manifest_version": 2,
   "name": "internet-as-a-gallery",
-  "version": "1.1",
-  "homepage_url": "https://koundinya.work",
+  "version": "1.2",
+  "homepage_url": "https://koundinya.website",
   "background": {
     "scripts": ["background.js"],
     "persistent": false

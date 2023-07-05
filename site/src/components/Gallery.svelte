@@ -99,7 +99,7 @@
 			const imgBox = document.createElement('img');
 
 			imgBox.src = img.url;
-			imgBox.alt = img.caption;
+			imgBox.alt = img.caption ? img.caption : "Unknown artwork";
 			imgBox.classList.add('img-gallery');
 
 			imgContainer.style.cursor = 'move';

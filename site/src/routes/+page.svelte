@@ -1,7 +1,7 @@
 <script>
 	import '../globals.css';
 
-	import Gallery from '../components/Gallery.svelte';
+	import Images from '../components/Images.svelte';
 	import Splash from '../components/Splash.svelte';
 	import About from '../components/About.svelte';
 	import Footer from '../components/Footer.svelte';
@@ -34,7 +34,7 @@
 	</section>
 {:else}
 	<div class="gallery" in:fade={{ duration: 4500 }}>
-		<Gallery {contents} />
+		<Images images={contents} />
 	</div>
 
 	<About />

@@ -57,7 +57,7 @@ const images = document.querySelectorAll("img");
 const data = [];
 
 images.forEach((image) => {
-  if (image.width > 100 && image.height > 100) {
+  if (image.naturalHeight > 200 && image.naturalWidth > 200) {
     data.push({
       url: image.src,
       caption: image.alt,
@@ -137,6 +137,8 @@ about.style.left = "20px";
 about.style.backgroundColor = "black";
 about.style.color = "white";
 about.style.fontFamily = "monospace";
+about.style.borderRadius = "5px";
+about.style.cursor = "pointer";
 
 document.body.append(about);
 
@@ -149,6 +151,8 @@ button.style.right = "20px";
 button.style.backgroundColor = "black";
 button.style.color = "white";
 button.style.fontFamily = "monospace";
+button.style.borderRadius = "5px";
+button.style.cursor = "pointer";
 
 let zCount = 0;
 
@@ -158,7 +162,7 @@ if (data.length === 0) {
   const notFoundText = "No images on this gallery";
   const p = document.createElement("p");
   p.innerText = notFoundText;
-  p.style.fontSize = "2em";
+  p.style.fontSize = "1em";
   p.style.color = "#2111fd";
   p.style.textAlign = "center";
   p.style.fontFamily = "Times";
@@ -173,8 +177,10 @@ if (data.length === 0) {
     const imgBox = document.createElement("img");
     imgBox.src = img.url;
     imgBox.alt = img.caption;
-    imgBox.style.boxShadow = "#2111fd 10px 0px 100px 10px";
+    imgContainer.style.boxShadow = "#2111fd 10px 0px 100px 10px";
 
+    imgContainer.style.background = "white";
+    imgContainer.style.padding = "10px";
     imgContainer.style.cursor = "move";
     imgContainer.style.display = "flex";
     imgContainer.style.flexDirection = "column";
@@ -187,11 +193,9 @@ if (data.length === 0) {
 
     const p = document.createElement("p");
     p.innerText = img.caption ? img.caption : "Unknown artwork";
-    p.style.textAlign = "center";
+    p.style.textAlign = "left";
     imgContainer.append(p);
-    p.style.opacity = "0";
     p.style.color = "rgb(33, 17, 253)";
-    p.style.fontSize = "1.5em";
 
     imgBox.addEventListener("dblclick", () => {
       newwindow = window.open(
@@ -232,18 +236,34 @@ if (data.length === 0) {
     //   Increase z-index on click
     imgContainer.addEventListener("mousedown", () => {
       imgContainer.style.zIndex = zCount++;
-      
+      imgContainer.style.boxShadow = "none";
+      imgContainer.style.animation = "none";
+      imgBox.style.cursor = "grabbing";
+      imgBox.style.transform = "scale(1.1)";
+      imgBox.style.transition = "all 0.2s";
+      p.style.fontSize = "1.3em";
+      p.style.marginTop = "1em";
+      p.style.transition = "all 0.2s";
     });
 
     //   Add caption on mouseenter
-    imgContainer.addEventListener("mousedown", () => {
-      p.style.opacity = "1";
-    });
+    // imgContainer.addEventListener("mousedown", () => {
+    //   p.style.opacity = "1";
+    // });
 
     //   Remove caption on mouseleave
 
     imgContainer.addEventListener("mouseup", () => {
-      p.style.opacity = "0";
+      imgContainer.style.boxShadow = "#2111fd 10px 0px 100px 10px";
+      imgBox.style.cursor = "grab";
+      imgContainer.style.animation = "float 5s infinite";
+      imgBox.style.transform = "scale(1)";
+      imgBox.style.transition = "all 0.2s";
+      p.style.color = "#2111fd";
+      p.style.fontSize = "1em";
+      p.style.marginTop = "5px";
+      p.style.transition = "all 0.2s";
+      p.style.textAlign = "left";
     });
 
     //   Event styles

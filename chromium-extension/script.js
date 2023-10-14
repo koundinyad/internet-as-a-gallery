@@ -1,12 +1,12 @@
 function popitup(img, url, windowName) {
-  newwindow = window.open(
+  const newwindow = window.open(
     url,
     windowName,
     `height=${Math.max(img.height * 1.5 || 600)},width=${Math.max(
       img.width * 1.5 || 600
     )},toolbar=no,menubar=no,location=no,resizable=no,status=no`
   );
-  if (window.focus) {
+  if (newwindow) {
     newwindow.focus();
   }
   return false;
@@ -17,42 +17,47 @@ function makeElementDraggable(element) {
     pos2 = 0,
     pos3 = 0,
     pos4 = 0;
-  element.onmousedown = dragMouseDown;
+  element.addEventListener("mousedown", dragMouseDown);
+  element.addEventListener("touchstart", dragMouseDown);
 
   function dragMouseDown(e) {
     e = e || window.event;
     e.preventDefault();
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    document.onmousemove = elementDrag;
+    pos3 = e.clientX || e.touches[0].clientX;
+    pos4 = e.clientY || e.touches[0].clientY;
+    document.addEventListener("mouseup", closeDragElement);
+    document.addEventListener("touchend", closeDragElement);
+    document.addEventListener("mousemove", elementDrag);
+    document.addEventListener("touchmove", elementDrag);
   }
 
   function elementDrag(e) {
     e = e || window.event;
     e.preventDefault();
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
+    pos1 = pos3 - (e.clientX || e.touches[0].clientX);
+    pos2 = pos4 - (e.clientY || e.touches[0].clientY);
+    pos3 = e.clientX || e.touches[0].clientX;
+    pos4 = e.clientY || e.touches[0].clientY;
 
     element.style.top = element.offsetTop - pos2 + "px";
     element.style.left = element.offsetLeft - pos1 + "px";
   }
 
   function closeDragElement() {
-    document.onmouseup = null;
-    document.onmousemove = null;
+    document.removeEventListener("mouseup", closeDragElement);
+    document.removeEventListener("touchend", closeDragElement);
+    document.removeEventListener("mousemove", elementDrag);
+    document.removeEventListener("touchmove", elementDrag);
   }
 }
 
-let h = window.innerHeight - 100;
-let w = window.innerWidth - 100;
-
+// Get required data from the page
 const images = document.querySelectorAll("img");
+
 const data = [];
+
 images.forEach((image) => {
-  if (image.width > 100 && image.height > 100) {
+  if (image.naturalHeight > 200 && image.naturalWidth > 200) {
     data.push({
       url: image.src,
       caption: image.alt,
@@ -60,101 +65,101 @@ images.forEach((image) => {
   }
 });
 
-document.querySelector("body").style.height = "100vh";
+document.head.textContent = "";
+
+document.querySelector("body").style.height = "200vh";
+document.querySelector(
+  "body"
+).style.backgroundImage = `url(${chrome.runtime.getURL("/clouds.gif")})`;
+document.querySelector("body").style.backgroundSize = "cover";
+document.querySelector("body").style.backgroundPosition = "center";
+document.querySelector("body").style.backgroundRepeat = "no-repeat";
+document.querySelector("body").style.backgroundAttachment = "fixed";
+document.querySelector("body").style.animation = "fadeInOpacity 3s ease-in-out";
+
 document.querySelector("body").innerHTML = "";
 
-let topSizes = "";
+let h = document.documentElement.scrollHeight - 100;
+let w = document.documentElement.scrollWidth - 100;
 
-for (let i = 0; i < data.length; i++) {
-  const keyframes = `@keyframes float${i} {
+let custom_styles = "";
+
+const keyframes = `@keyframes float {
     0% { 
-      transform: ${`translateY(-10px)`} 
+      transform: translateY(-10px)
     }
     50%  { 
-      transform: ${`translateY(10px)`} 
+      transform: translateY(10px)
     }
     100%   {
-      transform: ${`translateY(-10px)`}
+      transform: translateY(-10px)
     }   
-}`;
-  topSizes += " ";
-  topSizes += keyframes;
-
-  const rotate = `@keyframes rotate${i}} {
-    0% { transform: rotateY(0deg) }
-    50%  { transform: rotateY(${Math.random() * 30}deg) }
-    100%   { transform: rotateY(0deg) }
-    }`;
-  topSizes += " ";
-  topSizes += rotate;
 }
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+`;
+custom_styles += " ";
+custom_styles += keyframes;
 
 const style = document.createElement("style");
-const clouds = chrome.runtime.getURL("clouds.gif");
-console.log(clouds);
-const bg = `body {
-  background: url('${clouds}'); 
-  background-position: center;
-  background-size: cover;
-}`;
-topSizes += bg;
 
-style.innerHTML = topSizes;
+style.innerHTML = custom_styles;
 document.head.appendChild(style);
 
-let video = document.createElement("video");
-// display webcam feed on video element
-
-video.autoplay = true;
-video.muted = true;
-video.loop = true;
-video.style.position = "fixed";
-video.style.top = 0;
-video.style.width = "100%";
-document.body.appendChild(video);
-
-if (navigator.mediaDevices.getUserMedia) {
-  navigator.mediaDevices
-    .getUserMedia({ video: true })
-    .then(function (stream) {
-      video.srcObject = stream;
-    })
-    .catch(function (error) {
-      console.log("Something went wrong!");
-    });
-}
-
-video.style.opacity = 0.3;
-
 const button = document.createElement("button");
-button.innerText = "Close";
+button.innerText = "close";
 button.addEventListener("click", () => {
   location.reload();
 });
+
+const about = document.createElement("button");
+about.innerText = "about";
+about.addEventListener("click", () => {
+  window.open("https://internet-as-a-gallery.space");
+});
+about.style.position = "fixed";
+about.style.border = "none";
+about.style.padding = "5px 10px 5px 10px";
+about.style.bottom = "20px";
+about.style.left = "20px";
+about.style.backgroundColor = "black";
+about.style.color = "white";
+about.style.fontFamily = "monospace";
+about.style.borderRadius = "5px";
+about.style.cursor = "pointer";
+
+document.body.append(about);
 
 document.body.append(button);
 button.style.position = "fixed";
 button.style.border = "none";
 button.style.padding = "5px 10px 5px 10px";
-button.style.top = "20px";
+button.style.bottom = "20px";
 button.style.right = "20px";
 button.style.backgroundColor = "black";
 button.style.color = "white";
-button.style.fontFamily = "cursive";
+button.style.fontFamily = "monospace";
+button.style.borderRadius = "5px";
+button.style.cursor = "pointer";
 
 let zCount = 0;
 
 const body = document.querySelector("body");
 
 if (data.length === 0) {
-  const notFoundText = "No images found on this page :(";
+  const notFoundText = "No images on this gallery";
   const p = document.createElement("p");
   p.innerText = notFoundText;
-  p.style.fontSize = "2em";
-  p.style.color = "black";
+  p.style.fontSize = "1em";
+  p.style.color = "#2111fd";
   p.style.textAlign = "center";
-  p.style.textShadow = "0 0 .05em #fff,0 0 .1em #df5fff,0 0 .4em #ff44f6";
-  p.style.fontFamily = "cursive";
+  p.style.fontFamily = "Times";
   p.style.display = "grid";
   p.style.alignContent = "center";
   p.style.height = "100vh";
@@ -166,7 +171,10 @@ if (data.length === 0) {
     const imgBox = document.createElement("img");
     imgBox.src = img.url;
     imgBox.alt = img.caption;
+    imgContainer.style.boxShadow = "#2111fd 10px 0px 100px 10px";
 
+    imgContainer.style.background = "white";
+    imgContainer.style.padding = "10px";
     imgContainer.style.cursor = "move";
     imgContainer.style.display = "flex";
     imgContainer.style.flexDirection = "column";
@@ -178,16 +186,13 @@ if (data.length === 0) {
     body.append(imgContainer);
 
     const p = document.createElement("p");
-    p.innerText = img.caption;
-    p.style.textAlign = "center";
+    p.innerText = img.caption ? img.caption : "Unknown artwork";
+    p.style.textAlign = "left";
     imgContainer.append(p);
-    p.style.opacity = "0";
-    p.style.cursor = "pointer";
-    imgContainer.style.textShadow =
-      "0 0 .05em #fff,0 0 .1em #df5fff,0 0 .4em #ff44f6";
+    p.style.color = "rgb(33, 17, 253)";
 
     imgBox.addEventListener("dblclick", () => {
-      newwindow = window.open(
+      const newwindow = window.open(
         imgBox.src,
         imgBox.alt,
         `height=${Math.max(imgBox.height * 1.5 || 600)},width=${Math.max(
@@ -197,7 +202,7 @@ if (data.length === 0) {
     });
 
     p.addEventListener("click", () => {
-      newwindow = window.open(
+      const newwindow = window.open(
         imgBox.src,
         imgBox.alt,
         `height=${Math.max(imgBox.height * 1.5 || 600)},width=${Math.max(
@@ -205,8 +210,6 @@ if (data.length === 0) {
         )},toolbar=no,menubar=no,location=no,resizable=no,status=no`
       );
     });
-
-    //
 
     //   Drag context
     imgBox.setAttribute("draggable", "false");
@@ -217,35 +220,41 @@ if (data.length === 0) {
     imgContainer.style.position = "absolute";
 
     //   Random position
-    imgContainer.style.top = `${Math.random() * h * 0.7 + 100}px`;
-    imgContainer.style.left = `${Math.random() * w * 0.7 + 100}px`;
+    imgContainer.style.top = `${Math.random() * (h * 0.7) + 100}px`;
+    imgContainer.style.left = `${Math.random() * (w * 0.7) + 100}px`;
 
     //   Events
 
     //   Increase z-index on click
     imgContainer.addEventListener("mousedown", () => {
       imgContainer.style.zIndex = zCount++;
-    });
-
-    //   Add caption on mouseenter
-    imgContainer.addEventListener("mousedown", () => {
-      p.style.textShadow = "0 0 .05em #fff,0 0 .1em #df5fff,0 0 .4em #ff44f6";
-      p.style.opacity = "1";
-
-      imgContainer.style.transform = "scale(1.2)";
+      imgContainer.style.boxShadow = "none";
+      imgContainer.style.animation = "none";
+      imgBox.style.cursor = "grabbing";
+      imgBox.style.transform = "scale(1.1)";
+      imgBox.style.transition = "all 0.2s";
+      p.style.fontSize = "1.3em";
+      p.style.marginTop = "1em";
+      p.style.transition = "all 0.2s";
     });
 
     //   Remove caption on mouseleave
-
     imgContainer.addEventListener("mouseup", () => {
-      p.style.opacity = "0";
-      p.style.textShadow = "0 0 .05em #fff,0 0 .1em #df5fff,0 0 .4em #ff44f6";
+      imgContainer.style.boxShadow = "#2111fd 10px 0px 100px 10px";
+      imgBox.style.cursor = "grab";
+      imgContainer.style.animation = "float 5s infinite";
+      imgBox.style.transform = "scale(1)";
+      imgBox.style.transition = "all 0.2s";
+      p.style.color = "#2111fd";
+      p.style.fontSize = "1em";
+      p.style.marginTop = "5px";
+      p.style.transition = "all 0.2s";
+      p.style.textAlign = "left";
     });
 
     //   Event styles
     imgContainer.style.zIndex = zCount;
-    imgContainer.style.animation = `float${index} 5s infinite`;
-
-    //   Animation
+    imgContainer.style.animation = `float 5s infinite`;
+    imgContainer.style.animationDelay = `${index * 300}ms`;
   });
 }

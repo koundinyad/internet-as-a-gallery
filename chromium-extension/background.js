@@ -1,6 +1,6 @@
 chrome.contextMenus.create({
   id: "run-gallery",
-  title: "How does this page look like as a gallery?",
+  title: "this-page-as-a-gallery",
   contexts: ["page", "image"],
 });
 

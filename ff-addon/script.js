@@ -232,6 +232,7 @@ if (data.length === 0) {
     //   Increase z-index on click
     imgContainer.addEventListener("mousedown", () => {
       imgContainer.style.zIndex = zCount++;
+      
     });
 
     //   Add caption on mouseenter

@@ -17,17 +17,16 @@ export async function load({ params, fetch }) {
 		const response = await fetch(url);
 		const data = await response.json();
 
-		const contents =  data.contents.map(item => {
-            if (item.class == "Image") {
-                return {
-                    url: item.image.display.url,
-                    caption: item.description ? item.description : "Unknown artwork",
-                }
-        }})
+		const contents = data.contents.map((item) => {
+			if (item.class == 'Image') {
+				return {
+					url: item.image.display.url,
+					caption: item.description ? item.description : 'Unknown artwork'
+				};
+			}
+		});
 
-        return contents
-
-
+		return contents;
 	};
 
 	const data = getData(url);

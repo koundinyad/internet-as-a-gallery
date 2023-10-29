@@ -4,6 +4,8 @@
 
 	export let images;
 
+	let cleaned_images = images.filter((item) => item !== null && item !== undefined);
+
 	let innerWidth, innerHeight;
 	let containers = [];
 	let captions = [];
@@ -40,9 +42,9 @@
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
-{#if images}
+{#if cleaned_images.length > 0}
 	<div>
-		{#each images as item, i}
+		{#each cleaned_images as item, i}
 			{#if item.url}
 				<div
 					use:draggable

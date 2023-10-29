@@ -18,9 +18,18 @@
 	font-display: swap;
 }
 
-a {
+a,
+a:visited,
+a:active {
 	border-bottom: 1px dashed #2111fd;
 	text-decoration: none;
+	color: #2111fd;
+}
+
+a:hover {
+	background-color: #2111fd;
+	color: white;
+	transition: all 0.5s ease-in-out;
 }
 
 body {

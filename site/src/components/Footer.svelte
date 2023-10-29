@@ -7,7 +7,7 @@
 
 <footer>
 	<p>
-		by <a href="https://koundinya.work" target="_blank">koundinya</a>
+		by <a href="https://koundinya.website" target="_blank">koundinya</a>
 	</p>
 	<p>
 		<!-- svelte-ignore a11y-missing-attribute -->
